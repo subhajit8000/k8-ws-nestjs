@@ -8,7 +8,7 @@ dotenv.config(); // Load environment variables
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalFilters(new AllExceptionsFilter());
-  const port = process.env.PORT;
+  const port = process.env.PORT || 4000;
   await app.listen(port);
 }
 bootstrap();

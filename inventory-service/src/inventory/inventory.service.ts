@@ -11,12 +11,12 @@ export class InventoryService {
   }
 
   private initializeInventory() {
-    this.stock.set('espressoShot', new Ingredient('Espresso Shot', Number(process.env.ESPRESSO_SHOT_QUANTITY)));
-    this.stock.set('milk', new Ingredient('Milk', Number(process.env.MILK_QUANIITY)));
-    this.stock.set('milkFoam', new Ingredient('Milk Foam', Number(process.env.MILK_FOAM_QUANTITY)));
-    this.stock.set('hotWater', new Ingredient('Hot Water', Number(process.env.HOT_WATER_QUANTITY)));
+    this.stock.set('espressoShot', new Ingredient('Espresso Shot', Number(process.env.ESPRESSO_SHOT_QUANTITY || 100)));
+    this.stock.set('milk', new Ingredient('Milk', Number(process.env.MILK_QUANIITY || 10000)));
+    this.stock.set('milkFoam', new Ingredient('Milk Foam', Number(process.env.MILK_FOAM_QUANTITY || 600)));
+    this.stock.set('hotWater', new Ingredient('Hot Water', Number(process.env.HOT_WATER_QUANTITY || 99999999)));
   }
-
+  
   getStock(): Map<string, Ingredient> {
     return this.stock;
   }
