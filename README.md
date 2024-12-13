@@ -122,3 +122,26 @@ This application simulates the process of ordering coffee. The **Order Service**
 
 ---
 
+### **How to run the services**  
+1. Check version of npm : npm -v
+2. Check version of node : node -v
+3. Set / Export required variables in environment ( Use env file or set / export variables )
+Positive numerical values can be set for the following environment variables to override default values :
+ESPRESSO_SHOT_QUANTITY
+MILK_QUANTITY
+HOT_WATER_QUANTITY
+MILK_FOAM_QUANTITY
+4. cd inventory-service
+5. npm install
+6. npm run build
+7. Inventory service url should be set in INVENTORY_URL environment variable. Default value is http://localhost:3000
+8. In separate terminal : cd order-service
+9. npm install
+10. npm run build
+
+
+### **Technology Stack**
+- **Backend:**  
+  - NestJS
+- **API Communication:**  
+  - REST or gRPC for service-to-service communication.
